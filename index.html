@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WAO - ランディングページ</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="logo">
+            <h1>WAO</h1>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#features">特徴</a></li>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            未来を創造する<br /><span class="highlight">WAO</span>
+          </h1>
+          <p class="hero-subtitle">
+            革新的なソリューションで、あなたのビジネスを次のレベルへ
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary">無料で始める</button>
+            <button class="btn btn-secondary">詳細を見る</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-placeholder">
+            <span>Hero Image</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 特徴セクション -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title">なぜWAOを選ぶのか</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>高速パフォーマンス</h3>
+            <p>最新技術を活用した高速で安定したサービスを提供します。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>セキュリティ</h3>
+            <p>最高レベルのセキュリティで、あなたのデータを保護します。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3>革新的なアイデア</h3>
+            <p>
+              常に最新のトレンドを取り入れ、革新的なソリューションを提供します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 会社概要セクション -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>会社概要</h2>
+            <p>
+              WAOは、テクノロジーの力で人々の生活をより豊かにすることを使命としています。私たちは、革新的なソリューションを通じて、お客様のビジネスの成長をサポートします。
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <h3>1000+</h3>
+                <p>満足した顧客</p>
+              </div>
+              <div class="stat">
+                <h3>50+</h3>
+                <p>プロジェクト完了</p>
+              </div>
+              <div class="stat">
+                <h3>24/7</h3>
+                <p>サポート体制</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <div class="about-placeholder">
+              <span>About Image</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせセクション -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">お問い合わせ</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>お気軽にお問い合わせください</h3>
+            <p>
+              ご質問やご相談がございましたら、お気軽にお問い合わせください。
+            </p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <span>info@wao.com</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <span>03-1234-5678</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <span>東京都渋谷区...</span>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <div class="form-group">
+              <input type="text" placeholder="お名前" required />
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="メールアドレス" required />
+            </div>
+            <div class="form-group">
+              <textarea placeholder="メッセージ" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">送信する</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>WAO</h3>
+            <p>未来を創造するテクノロジーカンパニー</p>
+          </div>
+          <div class="footer-section">
+            <h4>サービス</h4>
+            <ul>
+              <li><a href="#">Web開発</a></li>
+              <li><a href="#">アプリ開発</a></li>
+              <li><a href="#">コンサルティング</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>会社情報</h4>
+            <ul>
+              <li><a href="#">会社概要</a></li>
+              <li><a href="#">採用情報</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 WAO. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
