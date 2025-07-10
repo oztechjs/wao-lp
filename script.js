@@ -271,3 +271,18 @@ if ("performance" in window) {
     }, 0);
   });
 }
+
+// ファーストビュー背景画像のフェード切り替え
+(function () {
+  const bg1 = document.querySelector(".hero-bg-image.bg1");
+  const bg2 = document.querySelector(".hero-bg-image.bg2");
+  if (!bg1 || !bg2) return;
+  let current = 0;
+  const images = [bg1, bg2];
+  images[current].classList.add("active");
+  setInterval(() => {
+    images[current].classList.remove("active");
+    current = (current + 1) % images.length;
+    images[current].classList.add("active");
+  }, 3000);
+})();
