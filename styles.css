@@ -5,11 +5,10 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.6;
-  color: #333;
-  overflow-x: hidden;
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -382,6 +381,13 @@ body {
   padding: 100px 0;
   background: url("images/pexels-felixmittermeier-956981.jpg") center
     center/cover no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  border: none !important;
+  overflow: visible !important;
+  min-height: auto !important;
+  height: auto !important;
 }
 
 .roadmap {
@@ -393,6 +399,12 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 48px 32px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
 }
 
 .roadmap-item {
@@ -449,6 +461,13 @@ body {
   padding: 0;
   background: url("images/pexels-felixmittermeier-956981.jpg") center
     center/cover no-repeat;
+  background-attachment: fixed;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  border: none !important;
+  overflow: visible !important;
+  min-height: auto !important;
+  height: auto !important;
 }
 
 .testimonial-full-bg {
@@ -456,8 +475,30 @@ body {
   width: 100vw;
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 0 auto !important;
   object-fit: cover;
+  line-height: 0;
+  border: none;
+  padding: 0;
+  position: relative;
+  top: -24px;
+  z-index: 2;
+  outline: 2px solid green !important;
+}
+
+.testimonial-top-line {
+  display: block;
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 0 auto;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  margin-bottom: -8px;
+  margin-top: 24px;
 }
 
 .testimonials-grid {
@@ -886,4 +927,29 @@ body {
   .faq-item.active .faq-answer {
     padding: 0 20px 20px;
   }
+}
+
+.roadmap-section .section-title {
+  background: url("images/gold-g23293bfe2_640.jpg") center center/cover
+    no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.section-divider-stars {
+  display: none !important;
+}
+
+.universe-bg-section {
+  background: url("images/pexels-felixmittermeier-956981.jpg") center
+    center/cover no-repeat fixed;
+  width: 100vw;
+  min-height: 1px;
+}
+
+.roadmap-section,
+.testimonials-section {
+  background: none !important;
 }
