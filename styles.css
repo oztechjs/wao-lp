@@ -351,17 +351,17 @@ html {
 .value-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  background: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
-
 .value-icon i {
   font-size: 2rem;
-  color: white;
+  color: var(--main-green);
 }
 
 .value-card h3 {
@@ -394,16 +394,15 @@ html {
   max-width: 800px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.6);
-  border-radius: 24px;
+  border-radius: 32px !important;
   box-shadow: 0 8px 32px rgba(60, 80, 120, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 48px 32px;
+  padding: 48px 32px 64px 32px;
   margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 64px !important;
   border: none !important;
   box-shadow: none !important;
-  border-radius: 0 !important;
   overflow: visible !important;
 }
 
@@ -432,8 +431,12 @@ html {
 .roadmap-number {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  color: white;
+  background: linear-gradient(
+    135deg,
+    var(--main-green),
+    var(--main-green-dark)
+  );
+  color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -442,6 +445,16 @@ html {
   font-weight: 700;
   margin-right: 30px;
   flex-shrink: 0;
+}
+.roadmap-item:nth-child(1) .roadmap-number,
+.roadmap-item:nth-child(2) .roadmap-number,
+.roadmap-item:nth-child(3) .roadmap-number,
+.roadmap-item:nth-child(4) .roadmap-number {
+  background: linear-gradient(
+    135deg,
+    var(--main-green),
+    var(--main-green-dark)
+  );
 }
 
 .roadmap-content h3 {
@@ -483,7 +496,7 @@ html {
   position: relative;
   top: -24px;
   z-index: 2;
-  outline: 2px solid green !important;
+  outline: none !important;
 }
 
 .testimonial-top-line {
@@ -499,6 +512,28 @@ html {
   z-index: 1;
   margin-bottom: -8px;
   margin-top: 24px;
+}
+
+.testimonial-top-line-wrapper {
+  position: relative;
+  width: 100vw;
+  text-align: center;
+}
+.testimonial-top-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  color: #fff;
+  font-size: 3.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 8px #000, 0 2px 16px #000, 0 1px 2px #000, 2px 2px 0 #fff,
+    -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 99;
+  mix-blend-mode: normal;
 }
 
 .testimonials-grid {
@@ -952,4 +987,217 @@ html {
 .roadmap-section,
 .testimonials-section {
   background: none !important;
+}
+
+:root {
+  --main-green: #00b86b;
+  --main-green-dark: #009e5c;
+}
+
+/* トップバーのロゴグラデーションやボタン、アクセントカラーを緑に */
+.logo h1 {
+  color: var(--main-green);
+  background: linear-gradient(
+    135deg,
+    var(--main-green),
+    var(--main-green-dark)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-menu a:hover {
+  color: var(--main-green);
+}
+
+.nav-menu a::after {
+  background: var(--main-green);
+}
+
+.cta-button {
+  background: linear-gradient(
+    135deg,
+    var(--main-green),
+    var(--main-green-dark)
+  );
+  box-shadow: 0 10px 30px rgba(0, 184, 107, 0.3);
+}
+
+.cta-button:hover {
+  box-shadow: 0 15px 40px rgba(0, 184, 107, 0.4);
+}
+
+.value-icon {
+  background: linear-gradient(
+    135deg,
+    var(--main-green),
+    var(--main-green-dark)
+  );
+}
+
+.roadmap-number {
+  background: linear-gradient(
+    135deg,
+    var(--main-green),
+    var(--main-green-dark)
+  );
+}
+
+.pricing-card.featured {
+  border-color: var(--main-green);
+}
+
+.pricing-card li::before {
+  color: var(--main-green);
+}
+
+.pricing-icon i {
+  color: var(--main-green);
+}
+
+.submit-button {
+  background: linear-gradient(
+    135deg,
+    var(--main-green),
+    var(--main-green-dark)
+  );
+}
+
+.submit-button:hover {
+  box-shadow: 0 10px 30px rgba(0, 184, 107, 0.3);
+}
+
+.footer-logo h3 {
+  color: var(--main-green);
+}
+
+.footer-links a:hover {
+  color: var(--main-green);
+}
+
+.value-icon i,
+.roadmap-number i,
+.faq-question i.fas.fa-star,
+.faq-question i.fas.fa-lightbulb,
+.faq-question i.fas.fa-book,
+.faq-question i.fas.fa-pen-nib {
+  color: var(--main-green);
+}
+
+.section-divider-stars {
+  color: var(--main-green);
+}
+
+.roadmap-floating-img {
+  position: absolute;
+  right: -60px;
+  bottom: -40px;
+  width: 320px;
+  max-width: 60vw;
+  transform: rotate(-8deg);
+  z-index: 10;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  border-radius: 24px;
+}
+@media (max-width: 900px) {
+  .roadmap-floating-img {
+    width: 180px;
+    right: -20px;
+    bottom: -20px;
+  }
+}
+
+.testimonial-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin: 48px auto 0 auto;
+  max-width: 800px;
+  z-index: 10;
+  position: relative;
+}
+.testimonial-comment {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px 18px 32px 18px;
+  box-shadow: 0 4px 24px rgba(60, 80, 120, 0.1);
+  padding: 32px 28px 24px 28px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  font-size: 1.1rem;
+  color: #222;
+}
+.testimonial-comment-author {
+  font-weight: bold;
+  color: var(--main-green);
+  margin-bottom: 12px;
+  font-size: 1.05em;
+}
+.testimonial-comment-body {
+  line-height: 1.8;
+  font-family: "Noto Sans JP", "Kosugi Maru", sans-serif;
+}
+
+.testimonial-photo-comment-wrapper {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+}
+.testimonial-photo-comment {
+  position: absolute;
+  top: 70px;
+  right: 6vw;
+  bottom: auto;
+  left: auto;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px 18px 32px 18px;
+  box-shadow: 0 4px 24px rgba(60, 80, 120, 0.1);
+  padding: 28px 24px 20px 24px;
+  max-width: 380px;
+  min-width: 220px;
+  width: 32vw;
+  font-size: 1.58rem;
+  color: #222;
+  z-index: 10;
+  text-align: left;
+}
+@media (max-width: 900px) {
+  .testimonial-photo-comment {
+    top: 12px;
+    right: 2vw;
+    bottom: auto;
+    left: auto;
+    width: 80vw;
+    max-width: 98vw;
+    padding: 16px 10px 12px 10px;
+    font-size: 1.45rem;
+  }
+}
+.testimonial-photo-comment-bottom {
+  position: absolute;
+  bottom: 32px;
+  left: 6vw;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px 18px 18px 32px;
+  box-shadow: 0 4px 24px rgba(60, 80, 120, 0.1);
+  padding: 28px 24px 20px 24px;
+  max-width: 380px;
+  min-width: 220px;
+  width: 32vw;
+  font-size: 1.05rem;
+  color: #222;
+  z-index: 10;
+  text-align: left;
+}
+@media (max-width: 900px) {
+  .testimonial-photo-comment-bottom {
+    bottom: 12px;
+    left: 2vw;
+    width: 60vw;
+    max-width: 90vw;
+    padding: 16px 10px 12px 10px;
+    font-size: 0.98rem;
+  }
 }
