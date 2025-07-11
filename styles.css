@@ -485,18 +485,20 @@ html {
 
 .testimonial-full-bg {
   display: block;
-  width: 100vw;
-  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
   height: auto;
-  margin: 0 auto 0 auto !important;
+  margin: 0 auto !important;
   object-fit: cover;
   line-height: 0;
-  border: none;
-  padding: 0;
-  position: relative;
-  top: -24px;
-  z-index: 2;
+  border: none !important;
+  padding: 0 !important;
+  background: none !important;
   outline: none !important;
+  box-shadow: none !important;
+  position: relative;
+  top: 0;
+  z-index: 2;
 }
 
 .testimonial-top-line {
@@ -1142,62 +1144,97 @@ html {
 
 .testimonial-photo-comment-wrapper {
   position: relative;
+  display: block;
   width: 100vw;
   max-width: 100vw;
+  margin: 0 auto;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+.testimonial-full-bg {
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  margin: 0 auto !important;
+  object-fit: cover;
+  line-height: 0;
+  border: none !important;
+  padding: 0 !important;
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  position: relative;
+  top: 0;
+  z-index: 2;
 }
 .testimonial-photo-comment {
   position: absolute;
-  top: 70px;
-  right: 6vw;
-  bottom: auto;
+  top: 160px;
+  right: 100px;
   left: auto;
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 18px 18px 32px 18px;
-  box-shadow: 0 4px 24px rgba(60, 80, 120, 0.1);
-  padding: 28px 24px 20px 24px;
+  bottom: auto;
   max-width: 380px;
-  min-width: 220px;
-  width: 32vw;
-  font-size: 1.58rem;
-  color: #222;
+  color: #111 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0.2em 0.8em;
+  font-size: 1.45rem;
   z-index: 10;
-  text-align: left;
-}
-@media (max-width: 900px) {
-  .testimonial-photo-comment {
-    top: 12px;
-    right: 2vw;
-    bottom: auto;
-    left: auto;
-    width: 80vw;
-    max-width: 98vw;
-    padding: 16px 10px 12px 10px;
-    font-size: 1.45rem;
-  }
+  text-align: right;
 }
 .testimonial-photo-comment-bottom {
   position: absolute;
-  bottom: 32px;
-  left: 6vw;
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 18px 18px 18px 32px;
-  box-shadow: 0 4px 24px rgba(60, 80, 120, 0.1);
-  padding: 28px 24px 20px 24px;
-  max-width: 380px;
-  min-width: 220px;
-  width: 32vw;
-  font-size: 1.05rem;
-  color: #222;
+  bottom: 114px;
+  left: 120px;
+  right: auto;
+  top: auto;
+  max-width: 340px;
+  color: #111 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0.2em 0.8em;
+  font-size: 1.45rem;
   z-index: 10;
-  text-align: left;
 }
 @media (max-width: 900px) {
+  .testimonial-photo-comment-wrapper,
+  .testimonial-full-bg {
+    max-width: 100vw;
+    width: 100vw;
+  }
+  .testimonial-photo-comment {
+    top: 5vw;
+    right: 5vw;
+    left: auto;
+    bottom: auto;
+    max-width: 96vw;
+    font-size: 1.15rem;
+    padding: 0.2em 0.4em;
+    text-align: right;
+  }
   .testimonial-photo-comment-bottom {
-    bottom: 12px;
+    bottom: 4vw;
     left: 2vw;
-    width: 60vw;
-    max-width: 90vw;
-    padding: 16px 10px 12px 10px;
-    font-size: 0.98rem;
+    max-width: 96vw;
+    font-size: 1.15rem;
+    padding: 0.2em 0.4em;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-photo-comment,
+  .testimonial-photo-comment-bottom {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 16px rgba(60, 80, 120, 0.1) !important;
+    padding: 16px 10px 12px 10px !important;
+    color: #111 !important;
   }
 }
