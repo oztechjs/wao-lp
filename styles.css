@@ -734,9 +734,10 @@ html {
 
 .pricing-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 30px;
+  align-items: stretch;
 }
 
 .pricing-card {
@@ -747,6 +748,11 @@ html {
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
 }
 
 .pricing-card.featured {
@@ -1269,4 +1275,144 @@ html {
     padding: 16px 10px 12px 10px !important;
     color: #111 !important;
   }
+}
+
+.prologue-section {
+  position: relative;
+  background: none;
+  padding: 56px 0 32px 0;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid #e6d8b8;
+}
+.prologue-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/無題10_20250629142201.PNG") center center/cover
+    no-repeat;
+  z-index: 0;
+  opacity: 0.45;
+  filter: blur(1.5px) brightness(0.9);
+}
+.prologue-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 251, 232, 0.92) 60%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  z-index: 1;
+}
+.prologue-section .container {
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(180, 160, 80, 0.08);
+  padding: 40px 24px 32px 24px;
+  display: inline-block;
+  margin-top: 16px;
+  position: relative;
+  z-index: 2;
+}
+.prologue-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #bfa14a;
+  margin-bottom: 24px;
+  font-family: "Kosugi Maru", "Noto Sans JP", serif;
+  text-shadow: 0 2px 8px #fffbe8cc;
+}
+.prologue-text {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 32px;
+  line-height: 2;
+  font-family: "Kosugi Maru", "Noto Sans JP", serif;
+  text-shadow: 0 1px 4px #fffbe8cc;
+}
+.prologue-cta .cta-button {
+  font-size: 1.1rem;
+  padding: 14px 36px;
+  border-radius: 32px;
+  box-shadow: 0 2px 16px #bfa14a33;
+  background: linear-gradient(90deg, #fffbe8 60%, #bfa14a 100%);
+  color: #444;
+  border: none;
+  font-weight: bold;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.prologue-cta .cta-button:hover {
+  box-shadow: 0 4px 32px #bfa14a55;
+  background: linear-gradient(90deg, #fffbe8 40%, #bfa14a 100%);
+  color: #222;
+}
+
+.global-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: url("images/無題10_20250629142201.PNG") center center/cover
+    no-repeat;
+  opacity: 0.18;
+  filter: blur(1.5px) brightness(0.9);
+  pointer-events: none;
+}
+
+.school-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  justify-content: center;
+  align-items: center;
+}
+.school-modal-content {
+  background: #fffbe8;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  min-width: 280px;
+  max-width: 90vw;
+  text-align: center;
+  position: relative;
+}
+.school-modal-content h3 {
+  margin-bottom: 18px;
+  color: #bfa14a;
+  font-size: 1.3rem;
+}
+.school-modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.school-modal-content li {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #444;
+}
+.school-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.5rem;
+  color: #bfa14a;
+  cursor: pointer;
+  font-weight: bold;
+}
+.school-modal-close:hover {
+  color: #222;
 }

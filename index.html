@@ -15,6 +15,7 @@
     />
   </head>
   <body>
+    <div class="global-bg"></div>
     <!-- トップバー -->
     <header class="topbar">
       <div class="container">
@@ -53,6 +54,26 @@
           <p class="hero-subtitle">
             プログラミングで未来を創造する力を身につけよう
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- プロローグ・ストーリー導入 -->
+    <section class="prologue-section">
+      <div class="prologue-bg"></div>
+      <div class="prologue-overlay"></div>
+      <div class="container">
+        <h2 class="prologue-title">君もこんなモヤモヤを抱えていないか？</h2>
+        <p class="prologue-text">
+          ・「自分の頭の中にある物語や世界観を、形にしてみたい」<br />
+          ・「プログラミングって難しそう…自分にできるのかな？」<br />
+          ・「学校の授業は物足りない、本物の“魔法”を学びたい」<br />
+          <br />
+          そんな君の想像力は、まだ眠っているだけ。<br />
+          この場所で、“本物の魔法（コード）”を学ぼう。
+        </p>
+        <div class="prologue-cta">
+          <a href="#cta" class="cta-button">無料体験会に参加してみる</a>
         </div>
       </div>
     </section>
@@ -260,53 +281,100 @@
     <section id="pricing" class="contact-section">
       <div class="container">
         <h2 class="section-title">お問い合わせ・料金</h2>
-        <div class="contact-content">
-          <div class="contact-info">
-            <h3>料金プラン</h3>
-            <div class="pricing-cards">
-              <div class="pricing-card">
-                <h4>月額プラン</h4>
-                <div class="price">¥15,000<span>/月</span></div>
-                <ul>
-                  <li>週1回の授業</li>
-                  <li>教材費込み</li>
-                  <li>オンラインサポート</li>
+        <div class="pricing-cards">
+          <!-- 3枚の料金カード（既存の内容） -->
+          <div class="pricing-card">
+            <h4>通常授業の月額料金（税込）</h4>
+            <div class="price">￥25,850<span>/月</span></div>
+            <ul>
+              <li>開講期間：4月中旬～翌年3月中旬の1年間</li>
+              <li>2時間×3回/月（全36コマ）</li>
+              <li>クレジットカード決済</li>
+            </ul>
+          </div>
+          <div class="pricing-card">
+            <h4>開講日程（京大本校）</h4>
+            <p style="margin-bottom: 18px; color: #666">
+              校舎・日程の詳細は下記ボタンからご覧いただけます。
+            </p>
+            <div style="margin-top: auto; text-align: center">
+              <button
+                id="open-schedule-modal"
+                class="cta-button"
+                type="button"
+                style="font-size: 1rem"
+              >
+                開講日程を見る
+              </button>
+            </div>
+            <!-- 開講日程モーダル -->
+            <div id="schedule-modal" class="school-modal">
+              <div class="school-modal-content">
+                <span class="school-modal-close">&times;</span>
+                <h3>開講日程（京大本校）</h3>
+                <ul
+                  style="
+                    text-align: left;
+                    margin: 0 auto;
+                    display: inline-block;
+                  "
+                >
+                  <li>
+                    <b>土曜日</b>
+                    <ul>
+                      <li>1限目: 16:00 ~ 18:00（Aコース・B1コース）</li>
+                      <li>2限目: 18:30 ~ 20:30（B2コース）</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <b>日曜日</b>
+                    <ul>
+                      <li>1限目: 10:00 ~ 12:00（Cコース）</li>
+                      <li>2限目: 12:30 ~ 14:30（B2コース・Aコース）</li>
+                      <li>3限目: 15:00 ~ 17:00（B1コース）</li>
+                      <li>4限目: 17:30 ~ 19:30（Aコース）</li>
+                    </ul>
+                  </li>
                 </ul>
-              </div>
-              <div class="pricing-card featured">
-                <h4>年額プラン</h4>
-                <div class="price">¥150,000<span>/年</span></div>
-                <ul>
-                  <li>週1回の授業</li>
-                  <li>教材費込み</li>
-                  <li>オンラインサポート</li>
-                  <li>2ヶ月分お得</li>
-                </ul>
+                <div
+                  style="margin-top: 12px; color: #bfa14a; font-size: 0.98rem"
+                >
+                  ※1年目はAコースです。
+                </div>
               </div>
             </div>
           </div>
-          <div class="contact-form">
-            <h3>お問い合わせ</h3>
-            <form>
-              <div class="form-group">
-                <input type="text" placeholder="お名前" required />
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder="メールアドレス" required />
-              </div>
-              <div class="form-group">
-                <input type="tel" placeholder="電話番号" />
-              </div>
-              <div class="form-group">
-                <textarea
-                  placeholder="お問い合わせ内容"
-                  rows="5"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="submit-button">送信する</button>
-            </form>
+          <div class="pricing-card featured">
+            <h4>BeEnで目指せる未来</h4>
+            <ul>
+              <li>3年間のオリジナルカリキュラム</li>
+              <li>想定時給単価：2,000円〜4,000円</li>
+              <li>3年目以降のカリキュラムも構想中</li>
+              <li>プログラミングのスキルで「稼ぐ力」を身につける</li>
+            </ul>
           </div>
+        </div>
+        <div class="contact-form" style="margin-top: 48px">
+          <h3>お問い合わせ</h3>
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="お名前" required />
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="メールアドレス" required />
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="電話番号" />
+            </div>
+            <div class="form-group">
+              <textarea
+                placeholder="お問い合わせ内容"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-button">送信する</button>
+          </form>
         </div>
       </div>
     </section>
@@ -325,13 +393,40 @@
             <a href="#pricing">料金</a>
             <a href="#curriculum">カリキュラム</a>
             <a href="#testimonials">卒業生の声</a>
+            <a href="https://be-engineer.tech/">公式サイト</a>
           </div>
           <div class="footer-contact">
-            <h4>連絡先</h4>
-            <p>〒123-4567</p>
-            <p>東京都渋谷区○○○○</p>
-            <p>TEL: 03-1234-5678</p>
-            <p>Email: info@beengineer.jp</p>
+            <h4>お問い合わせ</h4>
+            <p>体験会へのご参加・ご質問は公式サイトよりお気軽にどうぞ。</p>
+            <p>
+              <a href="https://be-engineer.tech/">https://be-engineer.tech/</a>
+            </p>
+          </div>
+          <div class="footer-company">
+            <h4>運営会社</h4>
+            <p>BeEngineer（BeEn）</p>
+            <p>
+              京都大学の学生エンジニアを中心とした講師陣による中高生向けプログラミング教室
+            </p>
+          </div>
+          <div class="footer-schools">
+            <h4>校舎一覧</h4>
+            <p>校舎一覧は公式サイトをご覧ください。</p>
+            <p><a href="https://be-engineer.tech/">校舎一覧ページへ</a></p>
+          </div>
+          <div class="footer-legal">
+            <h4>各種ポリシー</h4>
+            <ul>
+              <li>
+                <a href="https://be-engineer.tech/privacy_policy"
+                  >プライバシーポリシー</a
+                >
+              </li>
+              <li><a href="https://be-engineer.tech/">サービス利用規約</a></li>
+              <li>
+                <a href="https://be-engineer.tech/">特定商取引法に基づく表記</a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="footer-bottom">

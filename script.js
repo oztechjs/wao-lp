@@ -286,3 +286,45 @@ if ("performance" in window) {
     images[current].classList.add("active");
   }, 3000);
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 校舎一覧モーダル
+  const schoolModal = document.getElementById("school-modal");
+  const openSchoolBtn = document.getElementById("open-school-modal");
+  const closeSchoolBtn = schoolModal
+    ? schoolModal.querySelector(".school-modal-close")
+    : null;
+
+  if (openSchoolBtn && schoolModal && closeSchoolBtn) {
+    openSchoolBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      schoolModal.style.display = "flex";
+    });
+    closeSchoolBtn.addEventListener("click", function () {
+      schoolModal.style.display = "none";
+    });
+    window.addEventListener("click", function (e) {
+      if (e.target === schoolModal) schoolModal.style.display = "none";
+    });
+  }
+
+  // 開講日程モーダル
+  const scheduleModal = document.getElementById("schedule-modal");
+  const openScheduleBtn = document.getElementById("open-schedule-modal");
+  const closeScheduleBtn = scheduleModal
+    ? scheduleModal.querySelector(".school-modal-close")
+    : null;
+
+  if (openScheduleBtn && scheduleModal && closeScheduleBtn) {
+    openScheduleBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      scheduleModal.style.display = "flex";
+    });
+    closeScheduleBtn.addEventListener("click", function () {
+      scheduleModal.style.display = "none";
+    });
+    window.addEventListener("click", function (e) {
+      if (e.target === scheduleModal) scheduleModal.style.display = "none";
+    });
+  }
+});
