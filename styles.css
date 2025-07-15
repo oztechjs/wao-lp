@@ -515,6 +515,12 @@ html {
   height: auto !important;
 }
 
+/* デスクトップ版では モバイル用カードを非表示 */
+.testimonial-cards-mobile,
+.testimonials-section .container {
+  display: none;
+}
+
 .testimonial-full-bg {
   display: block;
   width: 100%;
@@ -540,12 +546,12 @@ html {
   height: auto;
   margin: 0 auto 0 auto;
   position: relative;
-  top: 0;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   margin-top: 0px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .testimonial-top-line-wrapper {
@@ -555,9 +561,9 @@ html {
 }
 .testimonial-top-title {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   color: #fff;
   font-size: 3.2rem;
   font-weight: bold;
@@ -986,6 +992,10 @@ html {
     font-size: 1.8rem;
   }
 
+  .testimonial-top-title {
+    font-size: 2rem;
+  }
+
   .value-card,
   .testimonial-card {
     padding: 30px 20px;
@@ -1241,6 +1251,122 @@ html {
   font-size: 1.45rem;
   z-index: 10;
 }
+/* 1000px以下での証言セクション完全リデザイン */
+@media (max-width: 1000px) {
+  .testimonials-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 60px 0;
+    background-attachment: initial;
+  }
+
+  .testimonial-photo-comment-wrapper,
+  .testimonial-full-bg {
+    display: none !important;
+  }
+
+  /* タイトルセクションは常に表示 */
+  .testimonial-top-line,
+  .testimonial-top-line-wrapper {
+    display: block !important;
+  }
+
+  .testimonial-top-title {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 8px #000, 0 2px 16px #000, 0 1px 2px #000, 2px 2px 0 #fff,
+      -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 99;
+    mix-blend-mode: normal;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  /* モバイル用カード表示 */
+  .testimonial-cards-mobile {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .testimonials-section .container {
+    display: block !important;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 40px;
+  }
+
+  /* 個別の証言カード */
+  .testimonial-card-mobile {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 35px 30px;
+    position: relative;
+    border-left: 4px solid var(--main-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-card-mobile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .testimonial-card-mobile:nth-child(even) {
+    margin-left: 40px;
+  }
+
+  .testimonial-card-mobile:nth-child(odd) {
+    margin-right: 40px;
+  }
+
+  /* バッジスタイル */
+  .testimonial-badge-mobile {
+    display: inline-block;
+    background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
+    color: #333;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 著者名 */
+  .testimonial-author-mobile {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--main-green);
+    margin-bottom: 15px;
+  }
+
+  /* 証言本文 */
+  .testimonial-body-mobile {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4a5568;
+    font-weight: 400;
+  }
+
+  /* 既存の証言要素を非表示 */
+  .testimonial-photo-comment,
+  .testimonial-photo-comment-bottom,
+  .testimonial-comments,
+  .testimonials-photos {
+    display: none !important;
+  }
+}
+
 @media (max-width: 900px) {
   .testimonial-photo-comment-wrapper,
   .testimonial-full-bg {
@@ -1263,6 +1389,45 @@ html {
     max-width: 96vw;
     font-size: 1.15rem;
     padding: 0.2em 0.4em;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 40px 0;
+  }
+
+  .testimonial-top-title {
+    font-size: 2.5rem;
+  }
+
+  .testimonials-section .container {
+    padding: 0 15px;
+    margin-top: 30px;
+  }
+
+  .testimonial-card-mobile {
+    padding: 25px 20px;
+    margin: 0 !important;
+  }
+
+  .testimonial-card-mobile:nth-child(even),
+  .testimonial-card-mobile:nth-child(odd) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .testimonial-author-mobile {
+    font-size: 1.1rem;
+  }
+
+  .testimonial-body-mobile {
+    font-size: 1.1rem;
+  }
+
+  .testimonial-badge-mobile {
+    font-size: 0.85rem;
+    padding: 6px 12px;
   }
 }
 
@@ -1463,4 +1628,32 @@ html {
   z-index: 2;
   pointer-events: none;
   transform: rotate(-10deg);
+}
+
+.testimonial-badge {
+  position: absolute;
+  left: -110px;
+  top: 18px;
+  background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
+  color: #333;
+  font-weight: bold;
+  font-size: 1.05rem;
+  padding: 10px 18px;
+  border-radius: 18px 0 0 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  writing-mode: vertical-rl;
+  text-align: center;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+@media (max-width: 900px) {
+  .testimonial-badge {
+    position: static;
+    display: block;
+    margin: 0 auto 8px auto;
+    writing-mode: horizontal-tb;
+    border-radius: 18px;
+    font-size: 0.98rem;
+    padding: 8px 14px;
+  }
 }
