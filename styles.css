@@ -939,8 +939,6 @@ html {
   }
 }
 
-
-
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
   .nav-menu {
@@ -998,23 +996,23 @@ html {
   .school-modal {
     padding: 15px;
   }
-  
+
   .school-modal-content {
     padding: 30px 20px;
     max-width: 95vw;
     max-height: 90vh;
   }
-  
+
   .school-modal-content h3 {
     font-size: 1.3rem;
     margin-bottom: 20px;
   }
-  
+
   .school-modal-content li {
     font-size: 1rem;
     margin: 10px 0;
   }
-  
+
   .school-modal-close {
     top: 10px;
     right: 15px;
@@ -1100,11 +1098,11 @@ html {
   .school-modal-content {
     padding: 25px 15px;
   }
-  
+
   .school-modal-content h3 {
     font-size: 1.2rem;
   }
-  
+
   .school-modal-content li {
     font-size: 0.95rem;
   }
@@ -1753,208 +1751,47 @@ html {
   box-shadow: 0 6px 20px rgba(0, 184, 107, 0.4);
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-  .schedule-accordion {
-    margin: 20px 15px;
-    max-width: calc(100% - 30px);
-  }
-  
-  .accordion-content {
-    padding: 20px 15px;
-  }
-  
-  .schedule-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .schedule-item {
-    padding: 15px;
-  }
-  
-  .schedule-item h4 {
-    font-size: 1.2rem;
-  }
-  
-  .schedule-item li {
-    font-size: 1rem;
-  }
-  
-  .schedule-toggle-btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .schedule-accordion {
-    margin: 15px 10px;
-    max-width: calc(100% - 20px);
-  }
-  
-  .accordion-content {
-    padding: 15px 10px;
-  }
-  
-  .schedule-item {
-    padding: 12px;
-  }
-  
-  .schedule-item h4 {
-    font-size: 1.1rem;
-  }
-  
-  .schedule-item li {
-    font-size: 0.95rem;
-  }
-  
-  .schedule-toggle-btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-}
-
-/* 先輩の声セクション */
-.senpai-voice-section {
-  position: relative;
-  padding: 100px 0;
-  background: url("images/pexels-felixmittermeier-956981.jpg") center
-    center/cover no-repeat;
-  background-attachment: fixed;
-  overflow: hidden;
-}
-
-.senpai-voice-content {
-  position: relative;
-  z-index: 2;
-}
-
-.senpai-voice-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #1f2937;
-}
-
-.senpai-voice-title::after {
-  content: "";
+/* デスクトップ版バッジのスタイル */
+.testimonial-badge-left {
   position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  border-radius: 2px;
+  top: 55%;
+  left: 2%;
+  background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
+  color: #333;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 18px 28px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transform: rotate(-5deg);
+  animation: float 3s ease-in-out infinite;
 }
 
-.senpai-voice-slider {
-  position: relative;
-  overflow: hidden;
-}
-
-.senpai-voice-slide {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.senpai-voice-slide.active {
-  display: flex;
-}
-
-.senpai-voice-quote {
-  font-size: 1.2rem;
-  font-style: italic;
-  margin-bottom: 20px;
-  color: #374151;
-}
-
-.senpai-voice-author {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1f2937;
-}
-
-.senpai-voice-navigation {
+.testimonial-badge-left-2 {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  gap: 10px;
+  top: 80%;
+  right: 4%;
+  background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
+  color: #333;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 18px 28px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transform: rotate(5deg);
+  animation: float 3s ease-in-out infinite 1.5s;
 }
 
-.senpai-voice-button {
-  width: 10px;
-  height: 10px;
-  background: #2563eb;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.senpai-voice-button.active {
-  background: #3b82f6;
-}
-
-/* スクロールスパイセクション */
-.scroll-spy-section {
-  position: relative;
-  padding: 100px 0;
-  background: #f8fafc;
-}
-
-.scroll-spy-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #1f2937;
-}
-
-.scroll-spy-content {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 40px 30px;
-}
-
-.scroll-spy-item {
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.scroll-spy-item:last-child {
-  margin-bottom: 0;
-}
-
-.scroll-spy-item::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 4px;
-  height: calc(100% - 20px);
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  border-radius: 2px;
-}
-
-.scroll-spy-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #1f2937;
-}
-
-.scroll-spy-description {
-  color: #6b7280;
-  line-height: 1.8;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
 }
 
 /* モバイル対応 */
