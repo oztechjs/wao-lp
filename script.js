@@ -202,6 +202,12 @@ document.addEventListener("keydown", (e) => {
     faqItems.forEach((item) => {
       item.classList.remove("active");
     });
+
+    // ESCキーでモーダルを閉じる
+    const schoolModal = document.getElementById("school-modal");
+    const scheduleModal = document.getElementById("schedule-modal");
+    if (schoolModal) schoolModal.style.display = "none";
+    if (scheduleModal) scheduleModal.style.display = "none";
   }
 });
 
@@ -288,43 +294,63 @@ if ("performance" in window) {
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-  // 校舎一覧モーダル
-  const schoolModal = document.getElementById("school-modal");
-  const openSchoolBtn = document.getElementById("open-school-modal");
-  const closeSchoolBtn = schoolModal
-    ? schoolModal.querySelector(".school-modal-close")
-    : null;
-
-  if (openSchoolBtn && schoolModal && closeSchoolBtn) {
-    openSchoolBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      schoolModal.style.display = "flex";
-    });
-    closeSchoolBtn.addEventListener("click", function () {
-      schoolModal.style.display = "none";
-    });
-    window.addEventListener("click", function (e) {
-      if (e.target === schoolModal) schoolModal.style.display = "none";
-    });
+  // シンプルなアコーディオン（蛇腹）システム
+  const scheduleAccordion = document.getElementById('scheduleAccordion');
+  const scheduleToggleBtn = document.querySelector('.schedule-toggle-btn');
+  let isAccordionOpen = false; // アコーディオンの状態を管理
+  
+  // アコーディオンを開く関数
+  function openAccordion() {
+      if (scheduleAccordion && !isAccordionOpen) {
+          scheduleAccordion.style.display = 'block';
+          isAccordionOpen = true;
+          if (scheduleToggleBtn) {
+              scheduleToggleBtn.textContent = '📅 開講日程・時間割を閉じる';
+          }
+          
+          // スムーズスクロール
+          setTimeout(() => {
+              scheduleAccordion.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+              });
+          }, 100);
+      }
   }
-
-  // 開講日程モーダル
-  const scheduleModal = document.getElementById("schedule-modal");
-  const openScheduleBtn = document.getElementById("open-schedule-modal");
-  const closeScheduleBtn = scheduleModal
-    ? scheduleModal.querySelector(".school-modal-close")
-    : null;
-
-  if (openScheduleBtn && scheduleModal && closeScheduleBtn) {
-    openScheduleBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      scheduleModal.style.display = "flex";
-    });
-    closeScheduleBtn.addEventListener("click", function () {
-      scheduleModal.style.display = "none";
-    });
-    window.addEventListener("click", function (e) {
-      if (e.target === scheduleModal) scheduleModal.style.display = "none";
-    });
+  
+  // アコーディオンを閉じる関数
+  function closeAccordion() {
+      if (scheduleAccordion && isAccordionOpen) {
+          scheduleAccordion.style.display = 'none';
+          isAccordionOpen = false;
+          if (scheduleToggleBtn) {
+              scheduleToggleBtn.textContent = '📅 開講日程・時間割を見る';
+          }
+      }
   }
+  
+  // メインのトグルボタンのイベントリスナー
+  if (scheduleToggleBtn && scheduleAccordion) {
+      scheduleToggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          if (isAccordionOpen) {
+              closeAccordion();
+          } else {
+              openAccordion();
+          }
+      });
+  }
+  
+  // 他の料金表示ボタンからもアコーディオンを開けるように（但し、schedule-toggle-btnは除外）
+  const allScheduleButtons = document.querySelectorAll('.btn-outline');
+  allScheduleButtons.forEach(button => {
+      if (button.textContent.includes('開講日程') && !button.classList.contains('schedule-toggle-btn')) {
+          button.addEventListener('click', function(e) {
+              e.preventDefault();
+              openAccordion();
+          });
+      }
+  });
 });

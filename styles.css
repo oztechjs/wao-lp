@@ -765,11 +765,13 @@ html {
 .pricing-card.featured {
   border-color: #2563eb;
   transform: scale(1.05);
+  z-index: auto;
 }
 
 .pricing-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  z-index: auto;
 }
 
 .pricing-card h4 {
@@ -907,6 +909,17 @@ html {
   margin-bottom: 8px;
 }
 
+/* フッター内のURLを白色に */
+.footer-contact a {
+  color: white !important;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #e5e7eb !important;
+}
+
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
@@ -925,6 +938,8 @@ html {
     transform: translateY(0);
   }
 }
+
+
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
@@ -978,6 +993,73 @@ html {
   .pricing-card.featured {
     transform: none;
   }
+
+  /* モーダル関連 */
+  .school-modal {
+    padding: 15px;
+  }
+  
+  .school-modal-content {
+    padding: 30px 20px;
+    max-width: 95vw;
+    max-height: 90vh;
+  }
+  
+  .school-modal-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .school-modal-content li {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  .school-modal-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    width: 25px;
+    height: 25px;
+  }
+
+  /* 証言セクション関連 */
+  .testimonials-section {
+    padding: 40px 0;
+  }
+
+  .testimonial-top-title {
+    font-size: 2.5rem;
+  }
+
+  .testimonials-section .container {
+    padding: 0 15px;
+    margin-top: 30px;
+  }
+
+  .testimonial-card-mobile {
+    padding: 25px 20px;
+    margin: 0 !important;
+  }
+
+  .testimonial-card-mobile:nth-child(even),
+  .testimonial-card-mobile:nth-child(odd) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .testimonial-author-mobile {
+    font-size: 1.1rem;
+  }
+
+  .testimonial-body-mobile {
+    font-size: 1.1rem;
+  }
+
+  .testimonial-badge-mobile {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1013,6 +1095,19 @@ html {
   .faq-item.active .faq-answer {
     padding: 0 20px 20px;
   }
+
+  /* モーダル関連 */
+  .school-modal-content {
+    padding: 25px 15px;
+  }
+  
+  .school-modal-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .school-modal-content li {
+    font-size: 0.95rem;
+  }
 }
 
 .roadmap-section .section-title {
@@ -1021,7 +1116,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-divider-stars {
@@ -1533,198 +1628,300 @@ html {
   pointer-events: none;
 }
 
-.school-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.35);
-  justify-content: center;
-  align-items: center;
-}
-.school-modal-content {
-  background: #fffbe8;
+/* 開講日程アコーディオンシステム */
+.schedule-accordion {
+  margin: 30px auto;
+  max-width: 900px;
+  background: white;
   border-radius: 16px;
-  padding: 32px 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  min-width: 280px;
-  max-width: 90vw;
-  text-align: center;
-  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 184, 107, 0.15);
+  border: 2px solid #f0f0f0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
-.school-modal-content h3 {
-  margin-bottom: 18px;
-  color: #bfa14a;
+
+.accordion-content {
+  padding: 30px;
+  background: #fafafa;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 0;
+}
+
+.schedule-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #00b86b;
+  transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.schedule-item h4 {
+  color: #2c3e50;
   font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
 }
-.school-modal-content ul {
+
+.schedule-item ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.school-modal-content li {
-  font-size: 1.1rem;
-  margin: 8px 0;
-  color: #444;
-}
-.school-modal-close {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 1.5rem;
-  color: #bfa14a;
-  cursor: pointer;
-  font-weight: bold;
-}
-.school-modal-close:hover {
-  color: #222;
-}
 
-.roadmap-side-photo {
-  position: absolute;
-  right: -60px;
-  bottom: -40px;
-  width: 320px;
-  max-width: 30vw;
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  z-index: 10;
-  opacity: 0.92;
-  object-fit: cover;
-  pointer-events: none;
-}
-@media (max-width: 900px) {
-  .roadmap-side-photo {
-    width: 180px;
-    right: -20px;
-    bottom: -20px;
-    max-width: 50vw;
-  }
-}
-@media (max-width: 600px) {
-  .roadmap-side-photo {
-    position: static;
-    display: block;
-    margin: 24px auto 0 auto;
-    width: 90vw;
-    max-width: 320px;
-    right: auto;
-    bottom: auto;
-  }
-}
-
-.roadmap-left-photo {
-  position: absolute;
-  left: -40px;
-  top: 80px;
-  width: 260px;
-  max-width: 22vw;
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  opacity: 0.92;
-  object-fit: cover;
-  z-index: 2;
-  pointer-events: none;
-  transform: rotate(-10deg);
-}
-
-.testimonial-badge {
-  position: absolute;
-  left: -110px;
-  top: 18px;
-  background: linear-gradient(90deg, #ffe066 60%, #ffd700 100%);
-  color: #333;
-  font-weight: bold;
+.schedule-item li {
   font-size: 1.05rem;
-  padding: 10px 18px;
-  border-radius: 18px 0 0 18px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  writing-mode: vertical-rl;
-  text-align: center;
-  letter-spacing: 0.05em;
-  z-index: 10;
+  margin: 10px 0;
+  color: #555;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
 }
-@media (max-width: 900px) {
-  .testimonial-badge {
-    position: static;
-    display: block;
-    margin: 0 auto 8px auto;
-    writing-mode: horizontal-tb;
-    border-radius: 18px;
-    font-size: 0.98rem;
-    padding: 8px 14px;
+
+.schedule-item li::before {
+  content: "📅";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* スケジュールトグルボタン */
+.schedule-toggle-btn {
+  background: linear-gradient(135deg, #00b86b, #009e5c);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 184, 107, 0.3);
+}
+
+.schedule-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 184, 107, 0.4);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .schedule-accordion {
+    margin: 20px 15px;
+    max-width: calc(100% - 30px);
+  }
+  
+  .accordion-content {
+    padding: 20px 15px;
+  }
+  
+  .schedule-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .schedule-item {
+    padding: 15px;
+  }
+  
+  .schedule-item h4 {
+    font-size: 1.2rem;
+  }
+  
+  .schedule-item li {
+    font-size: 1rem;
+  }
+  
+  .schedule-toggle-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
   }
 }
 
-/* 先輩の声セクション左端バッジ */
-.testimonial-badge-left {
-  position: absolute;
-  left: 150px;
-  top: 1120px; /* 先輩の声セクション内のもっと下の位置に配置 */
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2c5aa0 100%);
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.4rem; /* 文字サイズを大きく */
-  padding: 15px 25px; /* パディングも少し増やして見やすく */
-  border-radius: 25px;
-  box-shadow: 0 4px 20px rgba(74, 144, 226, 0.3), 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  writing-mode: vertical-rl;
+@media (max-width: 480px) {
+  .schedule-accordion {
+    margin: 15px 10px;
+    max-width: calc(100% - 20px);
+  }
+  
+  .accordion-content {
+    padding: 15px 10px;
+  }
+  
+  .schedule-item {
+    padding: 12px;
+  }
+  
+  .schedule-item h4 {
+    font-size: 1.1rem;
+  }
+  
+  .schedule-item li {
+    font-size: 0.95rem;
+  }
+  
+  .schedule-toggle-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 先輩の声セクション */
+.senpai-voice-section {
+  position: relative;
+  padding: 100px 0;
+  background: url("images/pexels-felixmittermeier-956981.jpg") center
+    center/cover no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.senpai-voice-content {
+  position: relative;
+  z-index: 2;
+}
+
+.senpai-voice-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
   text-align: center;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  transform: rotate(-5deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #1f2937;
 }
 
-.testimonial-badge-left:hover {
-  transform: rotate(-5deg) scale(1.05);
-  box-shadow: 0 6px 25px rgba(74, 144, 226, 0.4), 0 3px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* 先輩の声セクション左端バッジ（二人目用） */
-.testimonial-badge-left-2 {
+.senpai-voice-title::after {
+  content: "";
   position: absolute;
-  left: 1250px;
-  top: 1740px; /* 二人目の位置により下に配置 */
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2c5aa0 100%);
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.4rem; /* 文字サイズを大きく */
-  padding: 15px 25px; /* パディングも少し増やして見やすく */
-  border-radius: 25px;
-  box-shadow: 0 4px 20px rgba(74, 144, 226, 0.3), 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  writing-mode: vertical-rl;
-  text-align: center;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  transform: rotate(-5deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border-radius: 2px;
 }
 
-.testimonial-badge-left-2:hover {
-  transform: rotate(-5deg) scale(1.05);
-  box-shadow: 0 6px 25px rgba(74, 144, 226, 0.4), 0 3px 15px rgba(0, 0, 0, 0.3);
+.senpai-voice-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.senpai-voice-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.senpai-voice-slide.active {
+  display: flex;
+}
+
+.senpai-voice-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #374151;
+}
+
+.senpai-voice-author {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.senpai-voice-navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+}
+
+.senpai-voice-button {
+  width: 10px;
+  height: 10px;
+  background: #2563eb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.senpai-voice-button.active {
+  background: #3b82f6;
+}
+
+/* スクロールスパイセクション */
+.scroll-spy-section {
+  position: relative;
+  padding: 100px 0;
+  background: #f8fafc;
+}
+
+.scroll-spy-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #1f2937;
+}
+
+.scroll-spy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+}
+
+.scroll-spy-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.scroll-spy-item:last-child {
+  margin-bottom: 0;
+}
+
+.scroll-spy-item::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 4px;
+  height: calc(100% - 20px);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border-radius: 2px;
+}
+
+.scroll-spy-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.scroll-spy-description {
+  color: #6b7280;
+  line-height: 1.8;
 }
 
 /* モバイル対応 */
 @media (max-width: 1000px) {
-  .testimonial-badge-left {
-    display: none; /* モバイル版では非表示 */
-  }
-
-  .testimonial-badge-left-2 {
-    display: none; /* モバイル版では非表示 */
-  }
-}
-
-@media (max-width: 768px) {
   .testimonial-badge-left {
     display: none; /* モバイル版では非表示 */
   }
